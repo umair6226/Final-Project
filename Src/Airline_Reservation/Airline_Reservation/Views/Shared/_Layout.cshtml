@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Airline_Reservation</title>
+    <link rel="stylesheet" href="~/assets/vendors/bootstrap/bootstrap.min.js" />
+    <link rel="stylesheet" href="~/assets/css/steller.css"/>
+    <link rel="stylesheet" href="~/assets/vendors/themify-icons/css/themify-icons.css"/>
+   @* <link rel="stylesheet" href="~/css/site.css" />*@
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0" style="box-shadow:0px 1px 10px lightgray">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/imgs/PlaneLogo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Flight">Flights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Destinations" asp-controller="Home">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Home">Class</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Airline">Airlines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="- btn btn-primary rounded ml-4" asp-action="Index" asp-controller="Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="- btn btn-outline-primary rounded ml-4" asp-action="Registration" asp-controller="Login">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>          
+    </nav>
+   
+     <div class="container" style="margin-top:7rem;">
+         @RenderBody()
+     </div>
+
+   <footer class="page-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com" target="_blank">DevCRUD</a></p>
+                </div>
+                <div class="col-sm-6">
+                    <div class="socials">
+                        <a class="social-item" href="javascript:void(0)"><i class="ti-facebook"></i></a>
+                        <a class="social-item" href="javascript:void(0)"><i class="ti-google"></i></a>
+                        <a class="social-item" href="javascript:void(0)"><i class="ti-github"></i></a>
+                        <a class="social-item" href="javascript:void(0)"><i class="ti-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> 
+    <!-- End of page footer -->
+	
+	<!-- core  -->
+    <script src="~/assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="~/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap 3 affix -->
+	<script src="~/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- steller js -->
+    <script src="~/assets/js/steller.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

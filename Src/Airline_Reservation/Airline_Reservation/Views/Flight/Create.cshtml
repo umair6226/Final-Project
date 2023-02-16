@@ -1,0 +1,138 @@
+﻿@model Bussiness_Logic_Layer.FlightsBL
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Enter Details about Flight</h1>
+<hr />
+<div class="m-2">
+    <div class="p-2">
+        <form class="row" id="formData">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="FlightName" class="control-label">Flight Name</label>
+                    <input asp-for="FlightName" class="form-control" />
+                    <span asp-validation-for="FlightName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DepartureTime" class="control-label">Departure Time</label>
+                    <input asp-for="DepartureTime" class="form-control" />
+                    <span asp-validation-for="DepartureTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TravelDuration" class="control-label">Travel Duration</label>
+                    <input asp-for="TravelDuration" class="form-control" />
+                    <span asp-validation-for="TravelDuration" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Source" class="control-label">Source</label>
+                    <select id="Status" class="form-control" asp-for="Source">
+                        <option value="">--Select--</option>
+                        <option value="Karachi">Karachi</option>
+                        <option value="Lahore">Lahore</option>
+                        <option value="Islamabad">Islamabad</option>
+                        <option value="Peshawar">Peshawar</option>
+                        <option value="Multan">Multan</option>
+                        <option value="Faisalabad">Faisalabad</option>
+                    </select>
+                    <span asp-validation-for="Source" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Destination" class="control-label">Destination</label>
+                    <select id="Destination" class="form-control" asp-for="Destination">
+                        <option value="">--Select--</option>
+                        <option value="Karachi">Karachi</option>
+                        <option value="Lahore">Lahore</option>
+                        <option value="Islamabad">Islamabad</option>
+                        <option value="Peshawar">Peshawar</option>
+                        <option value="Multan">Multan</option>
+                        <option value="Faisalabad">Faisalabad</option>
+                    </select>
+                    <span asp-validation-for="Destination" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Distance" class="control-label">Distance</label>
+                    <input asp-for="Distance" class="form-control" />
+                    <span asp-validation-for="Distance" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SeatAvalaible" class="control-label">Avalaible Seats</label>
+                    <input asp-for="SeatAvalaible" class="form-control" />
+                    <span asp-validation-for="SeatAvalaible" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AirlineID" class="control-label">Airline</label>
+                    <input asp-for="AirlineID" class="form-control" />
+                    <span asp-validation-for="AirlineID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Status" class="control-label"></label>
+                    <select id="Status" class="form-control" asp-for="Status">
+                        <option value="">--Select--</option>
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+                <div class="form-group pt-2">
+                    <input type="submit" value="Save Changes" class="btn btn-primary mt-4 pl-5 pr-5" />
+                </div>
+            </div>
+           
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+    $(document).ready(function () {
+        Save();
+
+    });
+    function Save() {
+        $("#formData").submit(function (event) {
+            event.preventDefault();
+            var formdata = new FormData(document.getElementById("formData"));
+            $.ajax({
+                type: 'POST',
+                url: '/Flight/Save',
+                dataType: 'Json',
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (res) {
+                    if (res == 1) {
+                        alert("New Flight added Successfully");
+                        $("#frmData")[0].reset();
+                        window.location.href = "/Flight/Index";
+                    }
+                    return ("Error");
+                }
+            });
+        });
+    }
+    function Delete(id) {
+        $.ajax({
+            type: "Post",
+            url: "/Flight/Delete",
+            data: { AirlineId: id },
+            success: function () {
+                alert("Deleted");
+            }
+
+        });
+
+    }
+</script>
+}

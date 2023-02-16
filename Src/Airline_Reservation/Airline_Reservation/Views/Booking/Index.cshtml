@@ -1,0 +1,117 @@
+﻿@model List<Bussiness_Logic_Layer.FlightsBL>
+
+<style>
+    h5,h6{
+        color : darkblue;
+        font-weight:600;
+        display:inline;
+    }
+    .panel {
+        border-radius: 0.5rem;
+        box-shadow: 5px 5px 15px lightgrey;
+    }
+
+    .lblheading {
+        font-weight: 500;
+    }
+</style>
+<div class="row">
+    <div class="col-md-8">
+        @foreach (var item in Model)
+        {
+            <div>
+                <div class="mt-3 ml-3">
+                    <h5>Review Your Booking</h5>
+                    <div style="display:inline-block;float:right;" class="mr-5">
+                        <h6>   @Html.ActionLink("Flight Selection", "Index", "Booking", new { id = item.FlightNo }, new { style = "color:gray" })</h6>&nbsp; &gt; &nbsp;
+                        <h6> @Html.ActionLink("Booking", "Index", "Booking", new { id = item.FlightNo }, new { style = "color:darkblue" })</h6>&nbsp; &gt; &nbsp;
+                        <h6> @Html.ActionLink("Payment", "Index", "Booking", new { id = item.FlightNo }, new { style = "color:gray" })</h6>
+                    </div>
+                    <hr />
+                </div>
+                <div class="panel panel-default m-3 p-3">
+                    <div class="m-1 p-1">
+                        <h6>@item.Source</h6>&nbsp;-&nbsp;<h6>@item.Destination</h6>
+                        <hr />
+
+                    </div>
+                    <div class="panel-body row">
+                        <div class="col-md-12">
+                            <img src="@Url.Content(@item.ImagePath)" style="height:70px; width:6rem;" />
+                            <div class="ml-4" style="display:inline-block;">
+                                <span>@item.AirlineName</span><br />
+                                <span>@item.FlightName</span>
+                            </div>
+                            <hr />
+                        </div>
+
+                        <div class="col-md-12 row">
+                            <div class="col-md-4">
+                                <h6>@item.DepartureTime.ToString("HH : mm")</h6><br />
+                                <span>@item.DepartureTime.ToString("ddd, dd MMM,yyyy")</span><br />
+                                <span>@item.Source</span>
+                            </div>
+                            <div class="col-md-4 text-center pt-3">
+                                <span>@item.TravelDuration hr</span>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 style="float:right">@item.ArrivalTime.ToString("HH : mm")</h6><br />
+                                <span style="float:right;margin-right:-3rem;">@item.DepartureTime.ToString("ddd, dd MMM,yyyy")</span><br />
+                                <span style="float:right">@item.Destination</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*/*-----------------------------------------------*/*@
+                <div class="mt-4 ml-3">
+                    <h5>Traveller Details</h5>
+
+                    <hr />
+                </div>
+                <div class="panel panel-default m-3 p-3">
+                    <div class="m-1 p-1">
+                        <h6>Passenger 1<span class="badge-secondary m-2" style="padding:3px; border-radius:3px;">Adult</span> Primary Contact </h6>
+                        <hr />
+
+                    </div>
+                    <div class="panel-body row">
+                        <div class="col-md-12">
+                            <img src="@Url.Content(@item.ImagePath)" style="height:70px; width:6rem;" />
+                            <div class="ml-4" style="display:inline-block;">
+                                <span>@item.AirlineName</span><br />
+                                <span>@item.FlightName</span>
+                            </div>
+                            <hr />
+                        </div>
+
+                        <div class="col-md-12 row">
+                            <div class="col-md-4">
+                                <h6>@item.DepartureTime.ToString("HH : mm")</h6><br />
+                                <span>@item.DepartureTime.ToString("ddd, dd MMM,yyyy")</span><br />
+                                <span>@item.Source</span>
+                            </div>
+                            <div class="col-md-4 text-center pt-3">
+                                <span>@item.TravelDuration hr</span>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 style="float:right">@item.ArrivalTime.ToString("HH : mm")</h6><br />
+                                <span style="float:right;margin-right:-3rem;">@item.DepartureTime.ToString("ddd, dd MMM,yyyy")</span><br />
+                                <span style="float:right">@item.Destination</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+
+
+    @*--------------------------------------------------*@
+    <div class="col-md-4">
+
+    </div>
+</div>
+
+
+

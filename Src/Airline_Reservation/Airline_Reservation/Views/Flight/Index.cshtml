@@ -1,0 +1,131 @@
+﻿@model List<Bussiness_Logic_Layer.FlightsBL>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-primary mt-4">Add New Flight</a>
+</p>
+
+<style>
+    .panel {
+        border-radius: 0.5rem;
+        box-shadow: 5px 5px 15px lightgrey;
+    }
+
+    .lblheading {
+        font-weight: 500;
+        font-size:1.5em;
+    }
+    .btn-secondary{
+        background-color:darkblue;
+        color:white;
+    }
+    .btn-secondary:hover {
+            color: white;
+            background-color: darkblue;
+            border-color: darkblue;
+            text-decoration:none;
+    }
+</style>
+
+@foreach (var item in Model)
+{
+    <div class="panel panel-default m-3 p-1" id="Flights">
+
+        <div class="panel-body row">
+            <div class="col-md-4">
+                <div class="p-4">
+                    <img title="An Image" src="@Url.Content(@item.ImagePath)" style="height:30px; width: 2rem;">
+                    <span>@item.AirlineName</span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="p-4 row">
+                    <div class="col-md-3">
+                        <label class="lblheading ml-3"> @item.DepartureTime.ToString("HH : mm")<br /></label>
+                        <label class="ml-3">@item.Source</label>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="~/assets/imgs/i2symbol_10.1.10.110.png" style="height:80px; width:7rem;" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="lblheading ml-3"> @item.ArrivalTime.ToString("HH : mm")<br /></label>
+                        <label class="ml-3">@item.Destination</label>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="lblheading ml-5" style="font-size:1rem;">@item.TravelDuration&nbsp;hr</label>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+            <div class="col-md-2 p-3" style="border-left : 3px solid lightgray">
+               
+                @*<div class="m-2" style="width:100%">
+                    <a class="btn-sm btn-primary" style="color:white" onclick="Edit(@item.FlightNo)" href=""><i class="ti-pencil"></i></a>
+                </div>
+                <div class="m-2" style="width:100%">
+                    <a class="btn-sm btn-danger " onclick="Delete(@item.FlightNo)" href=""><i class="ti-trash"></i></a>
+                </div>*@
+                <div style="width:100%; margin-top:5rem;">
+                    @Html.ActionLink("Select", "Index", "Booking", new { id = item.FlightNo },new { @class="btn-sm btn-secondary pl-5 pr-5"})
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div id="Booking">
+
+</div>
+@section Scripts{
+<script>
+    function GetData() {
+        $.ajax({
+            type: "Get",
+            url: '/Flight/Index',
+        });
+    }
+    function Edit(id) {
+        $.ajax({
+            type: 'POST',
+            url: '/Flight/Edit',
+            data: { ID: id },
+            success: function () {
+                window.location.href = "/Flight/Create";
+            }
+        });
+    }
+
+    function Delete(id) {
+        $.ajax({
+            type: "Post",
+            url: '/Flight/Delete',
+            data: { FlightNo: id },
+            success: function (res) {
+                if (res==1) {
+                    alert("Deleted");
+                    GetData();
+                }
+                
+            }
+
+        });
+
+    }
+
+    function Booking(FlightNo) {
+        $.ajax({
+            type: 'Get',
+            url: '/Booking/Index',
+            data: { ID: FlightNo },
+            //success: function (res) {
+            //    $("#Booking").html(res);
+            //}
+        });
+    }
+</script>
+ }

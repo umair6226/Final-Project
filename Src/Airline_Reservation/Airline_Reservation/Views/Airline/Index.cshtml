@@ -1,0 +1,145 @@
+﻿
+
+@model Bussiness_Logic_Layer.AirlineBL
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Airlines </h1>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModalCenter">
+    Add New Airline
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Enter Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                @*Model Body*@
+                <form id="frmData">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label class="control-label">Airline Name</label>
+                        <input asp-for="AirlineName" id="AirlineName" class="form-control" />
+                        <span asp-validation-for="AirlineName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Image</label>
+                        <input asp-for="Image" id="Image" class="form-control" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Status</label>
+                        <select id="Status" class="form-control" asp-for="Status">
+                            <option value="">--Select--</option>
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Save Changes" />
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="LoadData">
+
+</div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+
+        $(document).ready(function () {
+            Save();
+            GetData();
+        });
+
+        function Save() {
+            $("#frmData").submit(function (event) {
+                event.preventDefault();
+                var formdata = new FormData(document.getElementById("frmData"));
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Airline/Save',
+                    dataType: 'json',
+                    data: formdata,
+                    contentType: false,
+                    processData: false,
+                    success: function (result) {
+                        if (result == 1) {
+                            alert("Saved");
+                            $("#frmData")[0].reset();
+                            $("#exampleModalCenter").modal("hide");
+
+                            GetData();
+                        }
+                        return ("Error");
+                    }
+                });
+            });
+        }
+
+        function GetData() {
+            $.ajax({
+                type: "Get",
+                url: "/Airline/GetData",
+                success: function (res) {
+                    $("#LoadData").html(res);
+                }
+            });
+        }
+
+        function Delete(id) {
+            $.ajax({
+                type: "Post",
+                url: "/Airline/Delete",
+                data: { AirlineId: id },
+                success: function () {
+                    alert("Deleted");
+                    GetData();
+                }
+
+            });
+
+        }
+
+        function Edit(id) {
+            $.ajax({
+                type: 'POST',
+                url: '/Airline/GetSpecific',
+                data: { ID: id },
+                success: function (res) {
+                    $("#exampleModalCenter").html(res);
+                    $("#exampleModalCenter").modal('show');
+                    $("#AirlineName").val = res.AirlineName;
+                    $("#Image").val = res.ImagePath;
+                    $("#Status").val = res.Status;
+
+                }
+            });
+        }
+    </script>
+}
+
+

@@ -1,0 +1,50 @@
+﻿@model List<Bussiness_Logic_Layer.FlightsBL>
+
+    <style>
+        .panel {
+            border-radius: 0.5rem;
+            box-shadow: 5px 5px 15px lightgrey;
+        }
+
+        .lblheading {
+            font-weight: 500;
+        }
+    </style>
+
+    @foreach (var item in Model){
+    <div class="panel panel-default m-3 p-3">
+        <h6>Review Your Booking</h6>
+        <div class="panel-body row">
+            <div class="col-md-2">
+                <img title="An Image" src="@Url.Content(@item.ImagePath)" style="height:70px; width: 70px;" class="ml-3">
+            </div>
+
+            <div class="col-md-4">
+                <label class="lblheading">Airline ID:&nbsp;</label> <span>@item.AirlineID</span><br>
+                <label class="lblheading">Airline Name:&nbsp;</label> <span>@item.AirlineName</span><br>
+            </div>
+            <div class="col-md-3">
+                <label class="lblheading">Status:&nbsp;</label>
+                @if (item.Status == 1)
+                {
+                <span>Active</span>
+                }
+                else
+                {
+                <span>Inactive</span>
+                }
+            </div>
+            <div class="col-md-3">
+                <div class="m-2" style="width:100%">
+                    <a class="btn-sm btn-primary" style="color:white" onclick="Edit(@item.AirlineID)" href=""><i class="ti-pencil"></i></a>
+                </div>
+                <div class="m-2" style="width:100%">
+                    <a class="btn-sm btn-danger " onclick="Delete(@item.AirlineID)" href=""><i class="ti-trash"></i></a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    }
+

@@ -1,0 +1,23 @@
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\Bussiness Logic Layer.deps.json
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\Bussiness Logic Layer.dll
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\Bussiness Logic Layer.pdb
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.dll
+C:\Users\LENOVO\Desktop\BootCamp Work\Final Project\Airline Reservation System\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.pdb
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.csproj.AssemblyReference.cache
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.AssemblyInfoInputs.cache
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.AssemblyInfo.cs
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.csproj.CoreCompileInputs.cache
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\Bussiness Logic Layer.deps.json
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\Bussiness Logic Layer.dll
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\Bussiness Logic Layer.pdb
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\DataAccess Layer.dll
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\DataAccess Layer.pdb
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.csproj.CopyComplete
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.dll
+C:\BootCamp\Final Project\Airline_Reservation\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Logic Layer.pdb
