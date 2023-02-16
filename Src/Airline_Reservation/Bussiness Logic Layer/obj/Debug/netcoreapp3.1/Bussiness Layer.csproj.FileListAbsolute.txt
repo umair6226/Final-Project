@@ -24,3 +24,16 @@ C:\Users\gullluma\Desktop\Airline_Reservation\Bussiness Logic Layer\obj\Debug\ne
 C:\Users\gullluma\Desktop\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.csproj.CopyComplete
 C:\Users\gullluma\Desktop\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.dll
 C:\Users\gullluma\Desktop\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.pdb
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\Bussiness Layer.deps.json
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\Bussiness Layer.dll
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\Bussiness Layer.pdb
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.AssemblyInfo.cs
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.csproj.CopyComplete
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.dll
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Bussiness Logic Layer\obj\Debug\netcoreapp3.1\Bussiness Layer.pdb

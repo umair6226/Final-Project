@@ -18,3 +18,13 @@ C:\Users\gullluma\Desktop\Airline_Reservation\DataAccess Layer\obj\Debug\netcore
 C:\Users\gullluma\Desktop\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\gullluma\Desktop\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.dll
 C:\Users\gullluma\Desktop\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\bin\Debug\netcoreapp3.1\DataAccess.deps.json
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\DataAccess Layer\obj\Debug\netcoreapp3.1\DataAccess.pdb

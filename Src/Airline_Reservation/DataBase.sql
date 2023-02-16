@@ -61,6 +61,7 @@ Status int,
 CreatedAt datetime,
 CreatedBy int,
 )
+
 create table tbl_Class(
 ClassID int primary key identity(1,1),
 Fare money,

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\Bussiness Logic Layer\\Bussiness Layer.csproj": {}
+    "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\Bussiness Logic Layer\\Bussiness Layer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\Bussiness Logic Layer\\Bussiness Layer.csproj": {
+    "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\Bussiness Logic Layer\\Bussiness Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\Bussiness Logic Layer\\Bussiness Layer.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\Bussiness Logic Layer\\Bussiness Layer.csproj",
         "projectName": "Bussiness Layer",
-        "projectPath": "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\Bussiness Logic Layer\\Bussiness Layer.csproj",
+        "projectPath": "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\Bussiness Logic Layer\\Bussiness Layer.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\Bussiness Logic Layer\\obj\\",
+        "outputPath": "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\Bussiness Logic Layer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj"
+              "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj": {
+    "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\DataAccess Layer\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Desktop\\BootCamp Work\\Final Project\\Airline_Reservation\\DataAccess Layer\\obj\\",
+        "outputPath": "C:\\Users\\LENOVO\\Documents\\Final-Project\\Src\\Airline_Reservation\\DataAccess Layer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",

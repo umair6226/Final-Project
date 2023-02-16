@@ -1,0 +1,49 @@
+﻿@model List<Airline_Reservation.Controllers.ClassBL>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ClassID
+            </th>
+            <th>
+                Fare
+            </th>
+            <th>
+                Class_Type
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassID)
+            </td>
+            <td>
+                @item.Fare.ToString("#,##,###")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class_Type)
+            </td>
+            @if (item.Status == 1)
+            {
+                <td>Active</td>
+            }
+            else
+            {
+                <td>Inactive</td>
+            }
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.ClassID  },new { @class= "btn-sm btn-primary" }) 
+                @Html.ActionLink("Delete", "Delete", new {  id=item.ClassID  }, new { @class = "btn-sm btn-danger" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

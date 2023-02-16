@@ -14,11 +14,16 @@
     .lblheading {
         font-weight: 500;
     }
+    .PriceCard {
+        box-shadow: 5px 5px 15px lightgrey;
+    }
 </style>
 <div class="row">
-    <div class="col-md-8">
-        @foreach (var item in Model)
-        {
+    @foreach (var item in Model)
+    {
+
+        <div class="col-md-8">
+
             <div>
                 <div class="mt-3 ml-3">
                     <h5>Review Your Booking</h5>
@@ -102,15 +107,26 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-        }
-    </div>
+        <div class="col-md-3 mt-5 pt-4 PriceCard" >
+            <h6>Book Now Before Tickets run out</h6><hr />
+            <div>
+                <img src="@Url.Content(@item.ImagePath)" style="height:50px; width:4.5rem; display:inl" />
+                <div style="display:inline-block" class="p-3">
+                    Flight<br />
+                    <h6>@item.Source.Substring(0, 3).ToUpper()</h6>&nbsp;-&nbsp;
+                    <h6>@item.Destination.Substring(0, 3).ToUpper()</h6><br />
+                    One Way
+                </div>
+            </div>
+        </div>
+    }
+
 
 
     @*--------------------------------------------------*@
-    <div class="col-md-4">
 
-    </div>
 </div>
 
 

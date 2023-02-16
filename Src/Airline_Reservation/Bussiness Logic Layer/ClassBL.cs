@@ -16,7 +16,7 @@ namespace Airline_Reservation.Controllers
         [Required(ErrorMessage ="Please Enter Fare for this class")]
         public double Fare { get; set; }
 
-        [Required(ErrorMessage = "Select Class Type")]
+        [Required(ErrorMessage = "Enter Class Type")]
 
         public string Class_Type { get; set; }
 
@@ -28,12 +28,13 @@ namespace Airline_Reservation.Controllers
         public int Save(ClassBL obj)
         {
             int result = 0;
-            SqlParameter[] prm = new SqlParameter[5];
+            SqlParameter[] prm = new SqlParameter[6];
             prm[0] = new SqlParameter("@ClassID", obj.ClassID);
-            prm[1] = new SqlParameter("@Fare", obj.Fare);
-            prm[2] = new SqlParameter("@Status", obj.Status);
-            prm[3] = new SqlParameter("@CreatedBy", obj.CreatedBy);
-            prm[4] = new SqlParameter("@Type", obj.ClassID > 0 ? 2 : 1);
+            prm[1] = new SqlParameter("@Class_Type", obj.Class_Type);
+            prm[2] = new SqlParameter("@Fare", obj.Fare);
+            prm[3] = new SqlParameter("@Status", obj.Status);
+            prm[4] = new SqlParameter("@CreatedBy", obj.CreatedBy);
+            prm[5] = new SqlParameter("@Type", obj.ClassID > 0 ? 2 : 1);
             result = DataAccess.ExecuteQuery("SP_Class", prm);
             return result;
         }
@@ -41,9 +42,9 @@ namespace Airline_Reservation.Controllers
         public List<ClassBL> GetAllClasses(int? Id = null)
         {
             SqlParameter[] prm = new SqlParameter[2];
-            prm[0] = new SqlParameter("@Flight_No", Id);
+            prm[0] = new SqlParameter("@ClassID", Id);
             prm[1] = new SqlParameter("@Type", 4);
-            DataTable dt = DataAccess.GetDataTable("SP_Flights", prm);
+            DataTable dt = DataAccess.GetDataTable("SP_Class", prm);
             List<ClassBL> list = new List<ClassBL>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
