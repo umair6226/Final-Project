@@ -70,8 +70,8 @@
                 <div class="m-2" style="width:100%">
                     <a class="btn-sm btn-danger " onclick="Delete(@item.FlightNo)" href=""><i class="ti-trash"></i></a>
                 </div>*@
-                <div style="width:100%; margin-top:5rem;">
-                    @Html.ActionLink("Select", "Index", "Booking", new { id = item.FlightNo },new { @class="btn-sm btn-secondary pl-5 pr-5"})
+                <div style="width:100%; margin-top:3rem;" class="pt-4 pl-3 pr-3" >
+                    <b> <a class="btn-sm btn-secondary" href="#" onclick="LoadBooking(@item.FlightNo)">Select&nbsp;<strong class="ml-4 mt-2" style="font-size:1.5rem;">&rarr;</strong></a></b>
                 </div>
             </div>
         </div>
@@ -117,14 +117,14 @@
 
     }
 
-    function Booking(FlightNo) {
+    function LoadBooking(FlightNo) {
         $.ajax({
             type: 'Get',
             url: '/Booking/Index',
             data: { ID: FlightNo },
-            //success: function (res) {
-            //    $("#Booking").html(res);
-            //}
+            success: function () {
+                window.location.href = "/Booking/Index/" + FlightNo;
+            }
         });
     }
 </script>

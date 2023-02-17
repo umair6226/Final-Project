@@ -17,6 +17,10 @@
     .PriceCard {
         box-shadow: 5px 5px 15px lightgrey;
     }
+    .leftlbl{
+        float:right;
+        font-weight:500;
+    }
 </style>
 <div class="row">
     @foreach (var item in Model)
@@ -111,13 +115,39 @@
 
         <div class="col-md-3 mt-5 pt-4 PriceCard" >
             <h6>Book Now Before Tickets run out</h6><hr />
-            <div>
-                <img src="@Url.Content(@item.ImagePath)" style="height:50px; width:4.5rem; display:inl" />
+            <div style="margin-top:-15px;">
+                <img src="@Url.Content(@item.ImagePath)" style="height:50px; width:4.5rem; display:inline-block; margin-top:-2.5rem;" />
                 <div style="display:inline-block" class="p-3">
                     Flight<br />
                     <h6>@item.Source.Substring(0, 3).ToUpper()</h6>&nbsp;-&nbsp;
                     <h6>@item.Destination.Substring(0, 3).ToUpper()</h6><br />
                     One Way
+                </div>
+            </div>
+            <hr />
+            <div>
+                <h6>Fare Sumary</h6>
+                <div class="mt-2">Adult ( 1 traveler )</div>
+                <div>
+                    <label>Base Fare</label>
+                    <label class="leftlbl">PKR 10,850</label>
+                </div>
+                <div>
+                    <label>Tax</label>
+                    <label class="leftlbl">PKR 2,450</label>
+                </div>
+                <hr />
+                <div>
+                    <label>Sub Total</label>
+                    <label class="leftlbl">PKR 14,000</label>
+                </div>
+                <div>
+                    <label>Hot Deals</label>
+                    <label class="leftlbl" style="color:lightseagreen">&minus;PKR 542</label>
+                </div>
+                <div>
+                    <label>Convenience Charge</label>
+                    <label class="leftlbl">PKR 283</label>
                 </div>
             </div>
         </div>
