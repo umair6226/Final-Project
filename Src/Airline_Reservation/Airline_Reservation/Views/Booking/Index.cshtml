@@ -127,38 +127,38 @@
             </div>
             <hr />
             <div>
-                <h6>Fare Sumary</h6>
+                <h6>Fare Sumary</h6><label style="float:right;">( @item.ClassType )</label>
                 <div class="mt-2">Adult ( 1 traveler )</div>
                 <div>
                     <label>Base Fare</label>
-                    <label class="leftlbl">PKR 10,850</label>
+                    <label class="leftlbl">PKR @item.Fare.ToString("#,##,###")</label>
                 </div>
                 <div>
                     <label>Tax</label>
-                    <label class="leftlbl">PKR 2,450</label>
+                    <label class="leftlbl">PKR @item.Tax.ToString("#,##,###")</label>
                 </div>
                 <hr />
                 <div>
                     <label>Sub Total</label>
-                    <label class="leftlbl">PKR 14,000</label>
+                    <label class="leftlbl">PKR @item.SubTotal.ToString("#,##,###")</label>
                 </div>
                 <div>
                     <label>Hot Deals</label>
-                    <label class="leftlbl" style="color:lightseagreen">&Theta; PKR 542</label>
+                    <label class="leftlbl" style="color:lightseagreen">&Theta; PKR @item.Discount.ToString("#,##,###")</label>
                 </div>
                 <div>
-                    <label>Convenience Charge</label>
-                    <label class="leftlbl">+ PKR 283</label>
+                    <label>Convenience Charges</label>
+                    <label class="leftlbl">+ PKR @item.ConvenienceCharge.ToString("#,##,###")</label>
                 </div>
                 <div class="mt-4 p-3" style="background-color: #e8f0fa; margin: -1rem; " >
                     
                     <div>
                         <h6>You Pay </h6><label>( for 1 traveler )</label>
-                        <h6><label class="leftlbl">PKR 13,741</label></h6>
+                        <h6><label class="leftlbl">PKR @item.GrandTotal.ToString("#,##,###")</label></h6>
                     </div>
                     <div>
                         <label style="color:lightseagreen">You Save</label>
-                        <label class="leftlbl" style="color:lightseagreen">PKR 542</label>
+                        <label class="leftlbl" style="color:lightseagreen">PKR @item.Discount.ToString("#,##,###")</label>
                     </div>
                 </div>
                 

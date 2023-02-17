@@ -144,6 +144,7 @@ alter proc SP_Flights
 @Seat_Avalaible nvarchar(max)=null,
 @Distance nvarchar(max)=null,
 @AirlineID int=null,
+@ClassID int=null,
 @Status int=null,
 @CreatedAt datetime=null,
 @CreatedBy int=null,
@@ -167,9 +168,11 @@ update tbl_Flight set IsDeleted=1 where Flight_No=@Flight_No
 End
 if(@Type=4)
 Begin
-select Flight_No,Flight_Name,Departure_Time,Source,Destination,Seat_Avalaible,Distance,F.AirlineID,F.Status,Image,Airline_Name,Travel_Duration
+select Flight_No,Flight_Name,Departure_Time,Source,Destination,Class_Type,Fare,Seat_Avalaible,Distance,F.AirlineID,F.Status,Image,Airline_Name,Travel_Duration
 from tbl_Flight F inner join tbl_Airline A
-on F.AirlineID=A.AirlineID where (@Flight_No is null or Flight_No=@Flight_No) and F.IsDeleted=0
+on F.AirlineID=A.AirlineID inner join tbl_FlightClass FC
+on F.Flight_No=FC.FlightID inner join tbl_Class C 
+on C.ClassID=FC.ClassID where C.ClassID=@ClassID and (@Flight_No is null or Flight_No=@Flight_No) and F.IsDeleted=0
 End
 if(@Type=5)
 Begin
@@ -212,3 +215,11 @@ End
 END
 Go;
 
+select Flight_No,Flight_Name,Departure_Time,Source,Destination,Class_Type,Fare,Seat_Avalaible,Distance,F.AirlineID,F.Status,Image,Airline_Name,Travel_Duration
+from tbl_Flight F inner join tbl_Airline A
+on F.AirlineID=A.AirlineID inner join tbl_FlightClass FC
+on F.Flight_No=FC.FlightID inner join tbl_Class C 
+on C.ClassID=FC.ClassID where C.ClassID=1
+
+insert into tbl_FlightClass values(1,1),(1,3),(2,1),(2,3),(3,1),(3,1),(3,3)
+select *from tbl_FlightClass

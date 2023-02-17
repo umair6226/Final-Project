@@ -42,10 +42,19 @@ namespace Bussiness_Logic_Layer
         public int FlightTime { get; set; }
         public DateTime ArrivalTime { get; set; }
 
+        public int ClassID { get; set; } = 1;
+        public double Fare { get; set; }
+        public double Tax { get; set; }
+        public double Discount { get; set; }
+        public double SubTotal { get; set; }
+        public double ConvenienceCharge { get; set; }
+        public double GrandTotal { get; set; }
+        public string ClassType { get; set; }
+
         public int Save(FlightsBL obj)
         {
             int result = 0;
-            SqlParameter[] prm = new SqlParameter[12];
+            SqlParameter[] prm = new SqlParameter[13];
             prm[0] = new SqlParameter("@Flight_No", obj.FlightNo);
             prm[1] = new SqlParameter("@Flight_Name", obj.FlightName);
             prm[2] = new SqlParameter("@Departure_Time", obj.DepartureTime);
@@ -57,16 +66,18 @@ namespace Bussiness_Logic_Layer
             prm[8] = new SqlParameter("@AirlineID", obj.AirlineID);
             prm[9] = new SqlParameter("@Status", obj.Status);
             prm[10] = new SqlParameter("@CreatedBy", obj.CreatedBy);
-            prm[11] = new SqlParameter("@Type", obj.FlightNo > 0 ? 2 : 1);
+            prm[11] = new SqlParameter("@ClassID", obj.ClassID);
+            prm[12] = new SqlParameter("@Type", obj.FlightNo > 0 ? 2 : 1);
             result = DataAccess.ExecuteQuery("SP_Flights", prm);
             return result;
         }
 
-        public List<FlightsBL> GetAllFlights(int? Id=null)
+        public List<FlightsBL> GetAllFlights(FlightsBL flight,int? Id=null)
         {
-            SqlParameter[] prm = new SqlParameter[2];
+            SqlParameter[] prm = new SqlParameter[3];
             prm[0] = new SqlParameter("@Flight_No", Id);
-            prm[1] = new SqlParameter("@Type", 4);
+            prm[1] = new SqlParameter("@ClassID", flight.ClassID);
+            prm[2] = new SqlParameter("@Type", 4);
             DataTable dt = DataAccess.GetDataTable("SP_Flights", prm);
             List<FlightsBL> list = new List<FlightsBL>();
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -81,8 +92,15 @@ namespace Bussiness_Logic_Layer
                 obj.Destination = Convert.ToString(dt.Rows[i]["Destination"]);
                 obj.Distance = Convert.ToString(dt.Rows[i]["Distance"]);
                 obj.DepartureTime = Convert.ToDateTime(dt.Rows[i]["Departure_Time"]);
+                obj.Fare = Convert.ToDouble(dt.Rows[i]["Fare"]);
+                obj.ClassType = Convert.ToString(dt.Rows[i]["Class_Type"]);
                 obj.ArrivalTime = obj.DepartureTime;
                 obj.ArrivalTime=obj.DepartureTime.AddHours(obj.TravelDuration);
+                obj.Tax = 28 * obj.Fare / 100;
+                obj.SubTotal = obj.Tax + obj.Fare;
+                obj.Discount = 3 * obj.SubTotal / 100;
+                obj.ConvenienceCharge = 2 * obj.SubTotal / 100;
+                obj.GrandTotal = (obj.SubTotal + obj.ConvenienceCharge) - obj.Discount;
 
                 list.Add(obj);
             }
@@ -107,8 +125,15 @@ namespace Bussiness_Logic_Layer
                 obj.Destination = Convert.ToString(dt.Rows[i]["Destination"]);
                 obj.Distance = Convert.ToString(dt.Rows[i]["Distance"]);
                 obj.DepartureTime = Convert.ToDateTime(dt.Rows[i]["Departure_Time"]);
+                obj.Fare = Convert.ToDouble(dt.Rows[i]["Fare"]);
+                obj.ClassType = Convert.ToString(dt.Rows[i]["Class_Type"]);
                 obj.ArrivalTime = obj.DepartureTime;
                 obj.ArrivalTime = obj.DepartureTime.AddHours(obj.TravelDuration);
+                obj.Tax = 28 * obj.Fare / 100;
+                obj.SubTotal = obj.Tax + obj.Fare;
+                obj.Discount = 3 * obj.SubTotal / 100;
+                obj.ConvenienceCharge = 2 * obj.SubTotal / 100;
+                obj.GrandTotal = (obj.SubTotal + obj.ConvenienceCharge) - obj.Discount;
 
             }
             return obj;

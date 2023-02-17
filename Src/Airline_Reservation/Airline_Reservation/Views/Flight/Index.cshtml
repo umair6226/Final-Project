@@ -62,15 +62,12 @@
                    
                 </div>
             </div>
-            <div class="col-md-2 p-3" style="border-left : 3px solid lightgray">
-               
-                @*<div class="m-2" style="width:100%">
-                    <a class="btn-sm btn-primary" style="color:white" onclick="Edit(@item.FlightNo)" href=""><i class="ti-pencil"></i></a>
+            <div class="col-md-2" style="border-left : 3px solid lightgray">
+                <div class="text-center mr-3">
+                    <label >( @item.ClassType )</label>
+                    <h5>PKR @item.Fare</h5>
                 </div>
-                <div class="m-2" style="width:100%">
-                    <a class="btn-sm btn-danger " onclick="Delete(@item.FlightNo)" href=""><i class="ti-trash"></i></a>
-                </div>*@
-                <div style="width:100%; margin-top:3rem;" class="pt-4 pl-3 pr-3" >
+                <div style="width:100%; " class="pt-4 pl-3 pr-3" >
                     <b> <a class="btn-sm btn-secondary" href="#" onclick="LoadBooking(@item.FlightNo)">Select&nbsp;<strong class="ml-4 mt-2" style="font-size:1.5rem;">&rarr;</strong></a></b>
                 </div>
             </div>

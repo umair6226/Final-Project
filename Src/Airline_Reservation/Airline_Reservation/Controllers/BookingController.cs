@@ -12,12 +12,12 @@ namespace Airline_Reservation.Controllers
         FlightsBL obj = new FlightsBL();
         public IActionResult Index(int? ID=null)
         {
-            List<FlightsBL> list = obj.GetAllFlights(ID);
+            List<FlightsBL> list = obj.GetAllFlights(obj,ID);
             return View(list);
         }
         public IActionResult GetData(int ID)
         {
-            List<FlightsBL> list = obj.GetAllFlights(ID);
+            List<FlightsBL> list = obj.GetAllFlights(obj,ID);
             return PartialView("_BookingPartial", list);
         }
     }

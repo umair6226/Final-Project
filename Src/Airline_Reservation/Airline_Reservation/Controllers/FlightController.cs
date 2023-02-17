@@ -12,7 +12,7 @@ namespace Airline_Reservation.Controllers
         FlightsBL obj = new FlightsBL();
         public IActionResult Index()
         {
-            List<FlightsBL> list = obj.GetAllFlights();
+            List<FlightsBL> list = obj.GetAllFlights(obj);
             return View(list);
         }
         public IActionResult Create()
