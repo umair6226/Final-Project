@@ -105,23 +105,7 @@ namespace Bussiness_Logic_Layer
                             await obj.Image.CopyToAsync(fileStream);
                         }
 
-                    
-
-                    /*string filename = Path.GetFileName(obj.Image.FileName);
-                    string ext = Path.GetExtension(filename);
-                    filename = Guid.NewGuid() + "-" + DateTime.Now.ToString("yyyyMMddhhmmss") + ext;
-                    string folderpath = Path.Combine("~/assets/imgs/", filename);
-                    using (var fileStream = new FileStream(folderpath, FileMode.Create))
-                    {
-                        obj.Image.CopyToAsync(fileStream);
-                    }*/
-                    // File.SaveAs(Server.MapPath(folderpath));
-                    //string domainName = HttpContext.Request.Url.GetLeftPart(UriPartial.Authority);
                     return @"~/assets/imgs/" + fileName;
-                    //return obj.Image;
-
-
-
                 }
                 return null;
             }
