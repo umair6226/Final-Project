@@ -34,14 +34,20 @@
              }
          </div>
          <div class="col-md-3">
-             <div class="m-2" style="width:100%">
-                 <a class="btn-sm btn-primary" style="color:white" onclick="Edit(@item.AirlineID)" href=""><i class="ti-pencil"></i></a>
-             </div>
-             <div class="m-2" style="width:100%">
-                 <a class="btn-sm btn-danger " onclick="Delete(@item.AirlineID)" href=""><i class="ti-trash"></i></a>
-             </div>
+             @*<div class="m-2" style="width:100%">
+                 <a class="btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="color:white" href="#" id="">
+                     @Html.ActionLink("", "Edit", "Airline", new { id = item.AirlineID })
+                 <i class="ti-pencil"></i>
+                 </a>
+             </div>*@
+         <div class="m-2" style="width:100%">
+             <a class="btn-sm btn-primary "  style="color:white;" onclick="Edit(@item.AirlineID)" href=""><i class="ti-pencil-alt"></i></a>
+         </div>
+         <div class="m-2" style="width:100%">
+             <a class="btn-sm btn-danger " onclick="Delete(@item.AirlineID)" href=""><i class="ti-trash"></i></a>
+         </div>
 
-             
+
          </div>
         </div>
      </div>

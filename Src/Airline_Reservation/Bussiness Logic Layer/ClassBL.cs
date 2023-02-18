@@ -23,18 +23,24 @@ namespace Airline_Reservation.Controllers
         [Required(ErrorMessage = "Select Status")]
 
         public int Status { get; set; }
+
+        [Required(ErrorMessage = "Select Airline")]
+        public int AirlineID { get; set; }
         public int CreatedBy { get; set; }
+        public string AirlineName { get; set; }
+        public string Image { get; set; }
 
         public int Save(ClassBL obj)
         {
             int result = 0;
-            SqlParameter[] prm = new SqlParameter[6];
+            SqlParameter[] prm = new SqlParameter[7];
             prm[0] = new SqlParameter("@ClassID", obj.ClassID);
             prm[1] = new SqlParameter("@Class_Type", obj.Class_Type);
-            prm[2] = new SqlParameter("@Fare", obj.Fare);
-            prm[3] = new SqlParameter("@Status", obj.Status);
-            prm[4] = new SqlParameter("@CreatedBy", obj.CreatedBy);
-            prm[5] = new SqlParameter("@Type", obj.ClassID > 0 ? 2 : 1);
+            prm[2] = new SqlParameter("@AirlineID", obj.AirlineID);
+            prm[3] = new SqlParameter("@Fare", obj.Fare);
+            prm[4] = new SqlParameter("@Status", obj.Status);
+            prm[5] = new SqlParameter("@CreatedBy", obj.CreatedBy);
+            prm[6] = new SqlParameter("@Type", obj.ClassID > 0 ? 2 : 1);
             result = DataAccess.ExecuteQuery("SP_Class", prm);
             return result;
         }
@@ -54,6 +60,8 @@ namespace Airline_Reservation.Controllers
                 obj.Class_Type = Convert.ToString(dt.Rows[i]["Class_Type"]);
                 obj.Status = Convert.ToInt32(dt.Rows[i]["Status"]);
                 obj.CreatedBy = Convert.ToInt32(dt.Rows[i]["CreatedBy"]);
+                obj.AirlineName = Convert.ToString(dt.Rows[i]["Airline_Name"]);
+                obj.Image = Convert.ToString(dt.Rows[i]["Image"]);
                 list.Add(obj);
             }
             return list;

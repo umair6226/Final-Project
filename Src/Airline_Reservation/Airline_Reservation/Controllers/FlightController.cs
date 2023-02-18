@@ -4,19 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using Bussiness_Logic_Layer;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airline_Reservation.Controllers
 {
     public class FlightController : Controller
     {
         FlightsBL obj = new FlightsBL();
+        AirlineBL airlines = new AirlineBL();
         public IActionResult Index()
         {
+            ViewBag.ClassID = new SelectList(obj.GetForDropDown(obj), "ClassID", "Class_Type");
             List<FlightsBL> list = obj.GetAllFlights(obj);
             return View(list);
         }
         public IActionResult Create()
         {
+            ViewBag.AirlineID = new SelectList(airlines.GetForDropDown(), "AirlineID", "AirlineName");
             return View();
         }
         public int Save(FlightsBL flight)

@@ -35,10 +35,16 @@ namespace Airline_Reservation.Controllers
             return PartialView("_AirlinePartial", list);
         }
 
-        public List<AirlineBL> GetSpecific(int ID)
+        //public List<AirlineBL> GetSpecific(int ID)
+        //{
+        //    List<AirlineBL> list = obj.GetById(ID);
+        //    return list;
+        //}
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Edit(int ID)
         {
-            List<AirlineBL> list = obj.GetById(ID);
-            return list;
+            var data = obj.GetById(ID);
+            return Json(data, System.Web.Mvc.JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

@@ -42,7 +42,7 @@ namespace Bussiness_Logic_Layer
         public int FlightTime { get; set; }
         public DateTime ArrivalTime { get; set; }
 
-        public int ClassID { get; set; } = 1;
+        public int? ClassID { get; set; } = 1;
         public double Fare { get; set; }
         public double Tax { get; set; }
         public double Discount { get; set; }
@@ -76,6 +76,10 @@ namespace Bussiness_Logic_Layer
         {
             SqlParameter[] prm = new SqlParameter[3];
             prm[0] = new SqlParameter("@Flight_No", Id);
+            if (flight.ClassID>1)
+            {
+                flight.ClassID = Id;
+            }
             prm[1] = new SqlParameter("@ClassID", flight.ClassID);
             prm[2] = new SqlParameter("@Type", 4);
             DataTable dt = DataAccess.GetDataTable("SP_Flights", prm);
@@ -145,6 +149,23 @@ namespace Bussiness_Logic_Layer
             prm[0] = new SqlParameter("@Flight_No", ID);
             prm[1] = new SqlParameter("@Type", 3);
             DataAccess.ExecuteQuery("SP_Flights", prm);
+        }
+        public List<FlightsBL> GetForDropDown(FlightsBL flight)
+        {
+            SqlParameter[] prm = new SqlParameter[2];
+            prm[0] = new SqlParameter("@ClassID", flight.ClassID);
+            prm[1] = new SqlParameter("@Type", 6);
+            DataTable dt = DataAccess.GetDataTable("SP_Flights", prm);
+            List<FlightsBL> list = new List<FlightsBL>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                FlightsBL obj = new FlightsBL();
+                obj.ClassID = Convert.ToInt32(dt.Rows[i]["ClassID"]);
+                obj.ClassType = Convert.ToString(dt.Rows[i]["Class_Type"]);
+
+                list.Add(obj);
+            }
+            return list;
         }
     }
 }

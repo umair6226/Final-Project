@@ -72,9 +72,9 @@ CreatedAt datetime,
 CreatedBy int,
 )
 
-create table tbl_FlightClass(
+create table tbl_AirlineClass(
 ID int primary key identity(1,1),
-FlightID int foreign key references tbl_Flight(Flight_No),
+AirlineID int foreign key references tbl_Airline(AirlineID),
 ClassID int foreign key references tbl_Class(ClassID)
 )
 
@@ -131,6 +131,10 @@ if(@Type=5)
 Begin
 select *from tbl_Airline where IsDeleted=0 and AirlineID=@AirlineID
 End
+if(@Type=6)
+Begin
+select AirlineID,Airline_Name from tbl_Airline where IsDeleted=0
+End
 END
 Go;
 
@@ -170,13 +174,17 @@ if(@Type=4)
 Begin
 select Flight_No,Flight_Name,Departure_Time,Source,Destination,Class_Type,Fare,Seat_Avalaible,Distance,F.AirlineID,F.Status,Image,Airline_Name,Travel_Duration
 from tbl_Flight F inner join tbl_Airline A
-on F.AirlineID=A.AirlineID inner join tbl_FlightClass FC
-on F.Flight_No=FC.FlightID inner join tbl_Class C 
-on C.ClassID=FC.ClassID where C.ClassID=@ClassID and (@Flight_No is null or Flight_No=@Flight_No) and F.IsDeleted=0
+on F.AirlineID=A.AirlineID inner join tbl_AirlineClass AC
+on A.AirlineID=AC.AirlineID inner join tbl_Class C 
+on C.ClassID=AC.ClassID where C.ClassID=@ClassID and (@Flight_No is null or Flight_No=@Flight_No) and F.IsDeleted=0
 End
 if(@Type=5)
 Begin
 select *from tbl_Flight where IsDeleted=0 and Flight_No=@Flight_No
+End
+if(@Type=6)
+Begin
+select *from tbl_Class where IsDeleted=0 and ClassID=@ClassID
 End
 END
 Go;
@@ -186,6 +194,7 @@ alter proc SP_Class
 @ClassID int =null,
 @Fare money=null,
 @Class_Type nvarchar(max)=null,
+@AirlineID int=null,
 @Status int=null,
 @CreatedAt datetime=null,
 @CreatedBy int=null,
@@ -194,7 +203,8 @@ As
 BEGIN
 if(@Type=1)
 Begin
-insert into tbl_Class values(@Fare,@Class_Type,0,@Status,GETDATE(),@CreatedBy)
+insert into tbl_Class values(@Fare,@Class_Type,0,@Status,GETDATE(),@CreatedBy) 
+--insert into tbl_AirlineClass values(@AirlineID,@ClassID)
 End
 if(@Type=2)
 Begin
@@ -206,7 +216,11 @@ update tbl_Class set IsDeleted=1 where ClassID=@ClassID
 End
 if(@Type=4)
 Begin
-select *from tbl_Class where IsDeleted=0
+select C.ClassID,Fare,Class_Type,Airline_Name,Image,C.Status,C.CreatedBy
+from tbl_Class C inner join tbl_AirlineClass AC
+on C.ClassID=AC.ClassID
+inner join tbl_Airline A on AC.AirlineID=A.AirlineID
+where C.IsDeleted=0 order by A.Airline_Name
 End
 if(@Type=5)
 Begin
@@ -215,11 +229,8 @@ End
 END
 Go;
 
-select Flight_No,Flight_Name,Departure_Time,Source,Destination,Class_Type,Fare,Seat_Avalaible,Distance,F.AirlineID,F.Status,Image,Airline_Name,Travel_Duration
-from tbl_Flight F inner join tbl_Airline A
-on F.AirlineID=A.AirlineID inner join tbl_FlightClass FC
-on F.Flight_No=FC.FlightID inner join tbl_Class C 
-on C.ClassID=FC.ClassID where C.ClassID=1
+select *from tbl_AirlineClass
+select *from tbl_Airline 
+select *from tbl_Class 
 
-insert into tbl_FlightClass values(1,1),(1,3),(2,1),(2,3),(3,1),(3,1),(3,3)
-select *from tbl_FlightClass
+insert into tbl_AirlineClass values(1,3),(2,3),(3,3),(4,3),(5,3)

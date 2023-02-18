@@ -9,7 +9,7 @@
 <h1>Airlines </h1>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModalCenter">
+<button id="buttonadd" type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModalCenter">
     Add New Airline
 </button>
 
@@ -67,7 +67,9 @@
 
 @section Scripts{
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
     <script>
+
 
         $(document).ready(function () {
             Save();
@@ -126,19 +128,32 @@
 
         function Edit(id) {
             $.ajax({
-                type: 'POST',
-                url: '/Airline/GetSpecific',
-                data: { ID: id },
+                type: "Get",
+                url: "/Airline/Edit/" + id,
+                contentType: "application/x-www-form-urlencoded",
+                dataType: 'json',
                 success: function (res) {
-                    $("#exampleModalCenter").html(res);
-                    $("#exampleModalCenter").modal('show');
+                    alert("Saved");
+                    $('#exampleModalCenter').modal('show');
                     $("#AirlineName").val = res.AirlineName;
                     $("#Image").val = res.ImagePath;
                     $("#Status").val = res.Status;
 
+                },
+                error: function () {
+                    alert("Error Here");
+                },
+                complete: function () {
+                    // Handle the complete event
+                    alert("Completed");
                 }
+           
             });
+
         }
+//        $('#yourSelectId').change(function() {
+//    var selectedVal = $('#yourSelectId option:selected').attr('value');
+//});
     </script>
 }
 

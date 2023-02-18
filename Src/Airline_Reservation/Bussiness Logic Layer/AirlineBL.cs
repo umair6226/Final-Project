@@ -90,7 +90,22 @@ namespace Bussiness_Logic_Layer
         }
 
 
+        public List<AirlineBL> GetForDropDown()
+        {
+            SqlParameter[] prm = new SqlParameter[1];
+            prm[0] = new SqlParameter("@Type", 6);
+            DataTable dt = DataAccess.GetDataTable("SP_Airline", prm);
+            List<AirlineBL> list = new List<AirlineBL>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                AirlineBL obj = new AirlineBL();
+                obj.AirlineID = Convert.ToInt32(dt.Rows[i]["AirlineID"]);
+                obj.AirlineName = Convert.ToString(dt.Rows[i]["Airline_Name"]);
 
+                list.Add(obj);
+            }
+            return list;
+        }
         public async Task<string> ImageUploadAsync(AirlineBL obj)
         {
             try

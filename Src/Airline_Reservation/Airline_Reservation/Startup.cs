@@ -48,6 +48,7 @@ namespace Airline_Reservation
 
             app.UseAuthorization();
 
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

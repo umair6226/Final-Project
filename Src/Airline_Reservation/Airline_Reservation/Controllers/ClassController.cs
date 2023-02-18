@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bussiness_Logic_Layer;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +11,10 @@ namespace Airline_Reservation.Controllers
     public class ClassController : Controller
     {
         ClassBL obj = new ClassBL();
+        AirlineBL airlines = new AirlineBL();
         public IActionResult Index()
         {
+            ViewBag.AirlineID = new SelectList(airlines.GetForDropDown(), "AirlineID", "AirlineName");
             return View();
         }
         [HttpPost]
