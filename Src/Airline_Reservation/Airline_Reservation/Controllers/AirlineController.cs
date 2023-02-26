@@ -40,15 +40,19 @@ namespace Airline_Reservation.Controllers
         //    List<AirlineBL> list = obj.GetById(ID);
         //    return list;
         //}
-        [System.Web.Mvc.HttpGet]
-        public ActionResult Edit(int ID)
+        //[System.Web.Mvc.HttpGet]
+        //public ActionResult Edit(int ID)
+        //{
+        //    var data = obj.GetById(ID);
+        //    return Json(data, System.Web.Mvc.JsonRequestBehavior.AllowGet);
+        //}
+
+        [HttpGet]
+        public IActionResult Edit(int ID)
         {
             var data = obj.GetById(ID);
-            return Json(data, System.Web.Mvc.JsonRequestBehavior.AllowGet);
+            return View(data);
         }
-
-        [HttpPost]
-
         public int Delete(int AirlineId)
         {
             obj.Delete(AirlineId);

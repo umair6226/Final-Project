@@ -1971,3 +1971,5 @@ C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Airline_Reservat
 C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Airline_Reservation\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
 C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Airline_Reservation\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
 C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Airline_Reservation\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Airline_Reservation\obj\Debug\netcoreapp3.1\Razor\Views\Ticket\_PersonalDetails.cshtml.g.cs
+C:\Users\LENOVO\Documents\Final-Project\Src\Airline_Reservation\Airline_Reservation\obj\Debug\netcoreapp3.1\Razor\Views\Airline\Edit.cshtml.g.cs

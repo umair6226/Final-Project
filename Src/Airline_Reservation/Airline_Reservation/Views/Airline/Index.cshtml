@@ -132,21 +132,21 @@
                 url: "/Airline/Edit/" + id,
                 contentType: "application/x-www-form-urlencoded",
                 dataType: 'json',
-                success: function (res) {
-                    alert("Saved");
-                    $('#exampleModalCenter').modal('show');
-                    $("#AirlineName").val = res.AirlineName;
-                    $("#Image").val = res.ImagePath;
-                    $("#Status").val = res.Status;
+                //success: function (res) {
+                //    alert("Saved");
+                //    $('#exampleModalCenter').modal('show');
+                //    $("#AirlineName").val = res.AirlineName;
+                //    $("#Image").val = res.ImagePath;
+                //    $("#Status").val = res.Status;
 
-                },
-                error: function () {
-                    alert("Error Here");
-                },
-                complete: function () {
-                    // Handle the complete event
-                    alert("Completed");
-                }
+                //},
+                //error: function () {
+                //    alert("Error Here");
+                //},
+                //complete: function () {
+                //    // Handle the complete event
+                //    alert("Completed");
+                //}
            
             });
 
